@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="/logo.jpg">
+    <title>计算实际到手工资</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        body {
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+        }
+
+        #JJ {
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+            color: rgb(255, 59, 92);
+        }
+
+        #CC {
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+            color: red;
+        }
+
+        #js {
+            margin: 225px 300px 200px 300px ;
+        }
+
+        #s {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="s">
+        <div id="js">
+            <p>发放工资: <input type="text" name="fname" id="FF" /></p>
+            <p>交五险一金的金额: <input type="text" name="lname" disabled=true id="JJ" /></p>
+            <p>实际到手工资: <input type="text" name="lname" disabled=true id="CC" /></p>
+            <button>点击</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    document.querySelector("button").addEventListener("click", dianJi);
+    function dianJi() {
+        let bi = (8 + 2 + 1 + 8) / 100
+        let G = document.querySelector("#FF").value;
+        let J = G * bi + 10;
+        document.querySelector("#JJ").value = J;
+        let he = G - J;
+        document.querySelector("#CC").value = he;
+    }
+
+
+</script>
+</html>
